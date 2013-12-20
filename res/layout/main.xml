@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="URL To jar"
+            android:id="@+id/textView" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:layout_alignParentTop="true" android:layout_toRightOf="@+id/textView"
+            android:layout_alignParentRight="true"
+            android:text="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Library name"
+            android:id="@+id/textView2" android:layout_below="@+id/editText" android:layout_toLeftOf="@+id/editText"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lib_name" android:layout_below="@+id/editText" android:layout_toRightOf="@+id/textView2"
+            android:layout_alignRight="@+id/editText"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download"
+            android:id="@+id/button" android:layout_below="@+id/lib_name" android:layout_centerHorizontal="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/percent" android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
+</RelativeLayout>
