@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="JarDownloader" default="help">
+<project name="jardl" default="help">
 
     <!-- The local.properties file is created and updated by the 'android' tool.
          It contains the path to the SDK. It should *NOT* be checked into
@@ -124,6 +124,7 @@
           sourcepathref="scala.srcpath"
           bootclasspathref="project.target.class.path"
           force="changed">
+          <!-- addparams="-Yclosure-elim -optimise" -->
           <classpath>
             <fileset dir="${jar.libs.absolute.dir}" includes="*.jar" />
           </classpath>
@@ -131,6 +132,7 @@
       </scalac>
     </target>
     <target name="-pre-compile" depends="scalac"/>
+<!--    <target name="-debug-obfuscation-check">
       <property name="proguard.enabled" value="true"/>
     </target> -->
 </project>
