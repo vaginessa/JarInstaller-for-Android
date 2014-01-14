@@ -114,17 +114,14 @@ class MyActivity extends Activity {
         toast("All files copied and permissions are done")
 
         // pop a dialog also
-        val libnamespretty = newLibNames.mkString("\n")
-        val newLibsFormatted =
-        s"""
-          You can now refer to
-          ${libnamespretty}
-          in your manifest
-        """.stripMargin
-
         uiThread{
           new Builder(this).setTitle("Congratulations").setView(new TextView(this){
-            setText(newLibsFormatted)
+            val libnamespretty = newLibNames.mkString("\n")
+            setText{
+              s"""You can now refer to
+              | ${libnamespretty}
+              | in your manifest""".stripMargin
+            }
           }).create().show()
         }
       }
@@ -168,12 +165,6 @@ class MyActivity extends Activity {
     <library name="$libname$number"
              file="/data/data/se.bache.JarInstaller/files/$libname$number.jar"/>
   </permissions>"""
-}
-
-class StringOutputStream extends OutputStream {
-  private[this]val sb = new StringBuilder
-  def write(oneByte: Int): Unit = sb.append(oneByte.toChar)
-  override def toString = sb.toString()
 }
 
 class AsyncS[I](fun: => I)(callback: I => Unit) extends AbsAsync[I] {
